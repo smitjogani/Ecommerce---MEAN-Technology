@@ -1,0 +1,15 @@
+.cartBtn{
+    padding: 8px;
+    width: 30%;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.cartBtn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    transition: ease 0.3s;
+}

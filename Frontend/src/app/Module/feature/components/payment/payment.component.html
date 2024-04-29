@@ -1,0 +1,49 @@
+<app-navbar/>
+<div class="pt-20 px-5 space-y-5 lg:px-20 ">
+    <ng-container>
+        <div class="p-5 mx-5 shadow-lg rounded-[12px] bg-[#f5f5f5]">
+            <app-address-card showButton="false"/>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 lg:grid-cols-3 relative justify-between py-5">
+            <div class="col-span-2">
+                <div class="p-5 space-y-2 rounded-[12px]">
+                    <div *ngFor="let product of products">
+                        <app-card-item/>
+                    </div>
+                </div>
+            </div>
+
+            <section class="col-span-1 px-5 sticky top-0 h-[100vh] mt-5 lg:mt-0 bg-[#f5f5f5] shadow-lg">
+                <ng-container>
+                    <div class="p-5 rounded-[12px]">
+                        <p class="font-semibold text-xl">Price Details</p>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div class="px-5 space-y-3">
+                        <div class="flex justify-between pt-3">
+                            <span>Total Price</span>
+                            <span>₹699</span>
+                        </div>
+                        <div class="flex justify-between pt-1">
+                            <span>Discount</span>
+                            <span class="text-green-400">-₹399</span>
+                        </div>
+                        <div class="flex justify-between pt-1">
+                            <span>Delivery Charges</span>
+                            <span class="text-green-400">Free</span>
+                        </div>
+                        <div class="flex justify-between font-semibold text-lg pt-1">
+                            <span>Total Amount</span>
+                            <span class="text-green-400">₹300</span>
+                        </div>
+                        <div class="py-5">
+                            <button class="btn">Check Out</button>
+                        </div>
+                    </div>
+                </ng-container>
+            </section>
+        </div>
+    </ng-container>
+</div>
+<app-footer/>

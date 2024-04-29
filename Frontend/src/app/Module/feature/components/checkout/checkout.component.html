@@ -1,0 +1,185 @@
+<app-navbar />
+<div class="pt-16 flex gap-5">
+  <div class="grid grid-cols-1 gap-4 w-[47%]">
+    <h1 class="py-4 text-3xl text-start px-10 font-bold">
+      Add Shiping Address
+    </h1>
+    <div class="col-span-1 lg:col-span-7">
+      <div class="rounded-[12px] shadow-lg p-5">
+        <form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+          <div class="grid gird-col-1 gap-3 sm:grid-cols-2">
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>First Name</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="firstName"
+                  placeholder="First Name"
+                  autocomplete="given-name"
+                />
+              </mat-form-field>
+            </div>
+
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Last Name</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="lastName"
+                  placeholder="Last Name"
+                  autocomplete="given-name"
+                />
+              </mat-form-field>
+            </div>
+
+            <div class="col-span-2">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Address</mat-label>
+                <textarea
+                  matInput
+                  type="text"
+                  formControlName="streetAddress"
+                  placeholder="Address"
+                  autocomplete="given-name"
+                  rows="4"
+                ></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>City</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="city"
+                  placeholder="City"
+                  autocomplete="given-name"
+                />
+              </mat-form-field>
+            </div>
+
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>State</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="state"
+                  placeholder="State"
+                  autocomplete="given-name"
+                />
+              </mat-form-field>
+            </div>
+
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Pincode</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="pincode"
+                  placeholder="Pincode"
+                  autocomplete="given-name"
+                  min="100000"
+                  max="999999"
+                />
+              </mat-form-field>
+              <mat-error *ngIf="myForm.controls['pincode'].hasError('required')"
+                >enter 6 digit pincode no</mat-error
+              >
+            </div>
+
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Phone Number</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="mobile"
+                  placeholder="Phone Number"
+                  autocomplete="given-name"
+                  min="1000000000"
+                  max="9999999999"
+                />
+              </mat-form-field>
+              <mat-error *ngIf="myForm.controls['mobile'].hasError('required')"
+                >enter 10 digit phone no</mat-error
+              >
+            </div>
+
+            <div class="col-span-2">
+              <button class="btn w-full">Deliver Here</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="h-screen w-[50%] rounded-[8px]">
+    <h1 class="py-4 text-3xl text-start px-10 font-bold">Product</h1>
+    <div class="p-5 bg-[#f5f5f5] shadow-lg">
+      <div class="grid grid-cols-6">
+        <div class="col-span-3">
+          <div class="flex w-full items-center">
+            <img
+              class="object-cover w-[8rem] h-[9rem]"
+              [src]="productData.image"
+              alt=""
+            />
+            <div class="ml-5">
+              <p>{{ productData.brand }}</p>
+              <p class="font-semibold text-lg">{{ productData.title }}</p>
+              <p class="text-sm text-gray-400">Size: {{ productData.sizes }}</p>
+              <p class="text-sm text-gray-400">
+                Color: {{ productData.color }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-2">
+          <!-- <button class="ordbtn" (click)="placeOrder()">Place Order</button> -->
+        </div>
+        <div class="col-span-1 flex gap-2 pl-[20px]">
+          <p class="text-lg font-semibold text-green-600">
+            ₹{{ productData.discountedPrice }}
+          </p>
+          <p class="text-md pt-1 line-through">₹{{ productData.price }}</p>
+        </div>
+      </div>
+    </div>
+    <h1 class="pt-2">Recent Address</h1>
+    <div
+      class="w-full h-[47%] rounded-[8px] shadow-lg py-2 px-1 overflow-scroll bg-[#f5f5f5] flex flex-col gap-1"
+    >
+      <div class="w-full p-1 flex justify-between" *ngFor="let item of getedAddress">
+        <div class="flex flex-col w-[40%]">
+          <div class="flex gap-1 mb-[-16px]">
+            <h2>{{item.firstName}}</h2>
+            <h2>{{item.lastName}}</h2>
+          </div>
+          <div class="flex flex-col">
+            <h3>{{item.streetAddress}}</h3>
+            <div class="flex gap-1 mb-[-16px] mt-[-16px]">
+              <h3>{{item.city}}</h3>
+              <h3>{{item.state}}</h3>
+              <h3>{{item.pincode}}</h3>
+            </div>
+            <h3>{{item.mobile}}</h3>
+          </div>
+        </div>
+        <div class="p-2 w-[60%] flex justify-end mt-[-40px]">
+          <button
+            class="border-[#000000] px-2 my-[36px] mb-[84px] border-[1px] bg-black text-[#ffffff] rounded-[8px] hover:bg-[#fff] hover:text-[#000]"
+            (click)="sendOrder(item)"
+          >
+            Deliver here
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer />

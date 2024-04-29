@@ -1,0 +1,19 @@
+<!-- <div class="transition-all cursor-pointer flex flex-col items-center rounded-lg overflow-hidden w-[15rem] mx-3">
+    <div class="h-[13rem] w-[10rem]">
+        <img [src]="product.imageUrl" alt="">
+    </div>
+    <div class="p-4">
+        <h3 class="font-medium text-sm">{{product.brand}}</h3>
+        <p class="mt-2 text-sm">{{product.title}}</p>
+    </div>
+</div> -->
+
+<div class="h-[20vw] m-2 w-[18.3vw] bg-[#f5f5f5] p-1 flex flex-col rounded-[14px] box">
+    <div class="img h-[18vw] w-full">
+        <img class="w-full object-cover h-[16vw] rounded-t-[11px]" [src]="product.imageUrl" alt="">
+    </div>
+    <div class="flex items-center justify-between px-[4px] pt-[9px]">
+        <h4 class="font-[16px]">{{product.brand}}</h4>
+        <!-- <p class="font-[16px]">₹{{product.price}}</p> -->
+    </div>
+</div>

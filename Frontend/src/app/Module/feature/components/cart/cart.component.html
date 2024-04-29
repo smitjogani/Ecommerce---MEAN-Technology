@@ -1,0 +1,44 @@
+<app-navbar/>
+<main class="pt-16 bg-[#f5f5f5]">
+    <div class="py-10 lg:grid grid-cols-3 lg:px-16 relative">
+        <section class="lg:col-span-2 lg:px-5">
+            <div class="p-s space-y-3">
+                <ng-container *ngIf="cart">
+                    <div *ngFor="let product of cart">
+                        <app-card-item showButton="true"/>
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+        <section class="px-5 sticky top-0 h-[100vh] mt-5 lg:mt-0 bg-[#f5f5f5] shadow-lg">
+            <ng-container *ngIf="cart">
+                <div class="p-5 rounded-[12px]">
+                    <p class="font-semibold text-xl">Price Details</p>
+                    <mat-divider></mat-divider>
+                </div>
+                <div class="px-5 space-y-3">
+                    <div class="flex justify-between pt-3">
+                        <span>Total Price</span>
+                        <span>₹699</span>
+                    </div>
+                    <div class="flex justify-between pt-1">
+                        <span>Discount</span>
+                        <span class="text-green-400">-₹399</span>
+                    </div>
+                    <div class="flex justify-between pt-1">
+                        <span>Delivery Charges</span>
+                        <span class="text-green-400">Free</span>
+                    </div>
+                    <div class="flex justify-between font-semibold text-lg pt-1">
+                        <span>Total Amount</span>
+                        <span class="text-green-400">₹300</span>
+                    </div>
+                    <div class="py-5">
+                        <button class="btn" (click)="navigateToCheckout()">Check Out</button>
+                    </div>
+                </div>
+            </ng-container>
+        </section>
+    </div>
+</main>
+<app-footer/>

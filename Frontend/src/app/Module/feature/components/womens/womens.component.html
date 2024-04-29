@@ -1,0 +1,169 @@
+<app-navbar/>
+<div class="pt-16">
+  <main class="max-w-7xl">
+    <section class="pt-3">
+      <div class="flex w-full items-center gap-8 py-[1vw] px-9">
+        <div class="flex flex-col items-center cursor-pointer">
+          <img
+            src="https://img.freepik.com/premium-psd/crop-top-mockup-design_23-2149758739.jpg?w=360"
+            alt="Tshirt"
+            class="rounded-full w-[5vw] h-[5vw] object-cover"
+          />
+          <h3>T-shirt</h3>
+        </div>
+
+        <div class="flex flex-col items-center cursor-pointer">
+          <img
+            src="https://img.freepik.com/free-photo/beautiful-men-fashion-shirt_74190-5185.jpg?t=st=1711454171~exp=1711457771~hmac=8efee919a4deb39cf7c094a1dbd5168e3283918fb8d58bda5ff1a6ad203f45e4&w=1060"
+            alt="Shirt"
+            class="rounded-full w-[5vw] h-[5vw] object-cover"
+          />
+          <h3>Shirt</h3>
+        </div>
+
+        <div class="flex flex-col items-center cursor-pointer">
+          <img
+            src="https://img.freepik.com/premium-photo/jeans-trousers-hanging-with-wood-hanger-wall_1339-156619.jpg?w=360"
+            alt="Pants"
+            class="rounded-full w-[5vw] h-[5vw] object-cover"
+          />
+          <h3>Pants</h3>
+        </div>
+
+        <div class="flex flex-col items-center cursor-pointer">
+          <img
+            src="https://img.freepik.com/premium-photo/women-kurti-with-pant-dupatta_953724-440.jpg?w=740"
+            alt="Traditional"
+            class="rounded-full w-[5vw] h-[5vw] object-cover"
+          />
+          <h3>Traditional</h3>
+        </div>
+
+        <div class="flex flex-col items-center cursor-pointer">
+          <img
+            src="https://img.freepik.com/premium-photo/woman-green-orange-saree_917855-40.jpg?w=740"
+            alt="Tshirt"
+            class="rounded-full w-[5vw] h-[5vw] object-cover"
+          />
+          <h3>Saree</h3>
+        </div>
+
+        <div class="flex flex-col items-center cursor-pointer">
+          <img
+            src="https://img.freepik.com/free-photo/blonde-young-girl-amusement-park_23-2147918825.jpg?t=st=1711455716~exp=1711459316~hmac=bacbc54643d2d2223347008e2d43865d3b08906d1149b0eacf457a88e7da9264&w=360"
+            alt="Tshirt"
+            class="rounded-full w-[5vw] h-[5vw] object-cover"
+          />
+          <h3>Western</h3>
+        </div>
+      </div>
+
+      <div class="flex justify-between pt-3 pb-0 min-w-full bg-[#f5f5f5] px-6">
+        <h1 class="text-4xl h font-extrabold">Products</h1>
+        <div class="flex items-center">
+          <div>
+            <button mat-button (click)="toggleSortingMenu()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-sort-up"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.5.5 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"
+                />
+              </svg>
+            </button>
+            <div
+              class="submenu-wrap absolute top-[42%] mt-1 right-[1%] w-[200px] bg-black text-[#f5f5f5] rounded-[6px]"
+            >
+              @if(isSortMenuOpen){
+              <div class="submenu pb-2 pt-2 m-[10px]">
+                <div
+                  class="info flex items-center flex-col justify-between bottom-[100%]"
+                >
+                  <button class="pb-2 hover:text-[#fbff1c]">
+                    Price: High - Low
+                  </button>
+                  <button class="pb-2 hover:text-[#de7c31]">
+                    Price: Low - High
+                  </button>
+                </div>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-2 gap-y-10 lg:grid-cols-4 px-2">
+        <!-- <div class="bg-[#f5f5f5] p-6 mb-2 rounded-[6px]">
+                      <div class="flex items-center justify-between">
+                          <p class="text-lg font-semibold">Filters</p>
+                          <i class="pb-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                  class="bi bi-filter" viewBox="0 0 16 16">
+                                  <path
+                                      d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                              </svg>
+                          </i>
+                      </div>
+                      <form class="hidden lg:block">
+                          <div class="" *ngFor="let item of filterData">
+                              <div class="border-b border-gray-200 py-3">
+                                  <span class="font-medium">{{item.name}}</span>
+                                  <div class="pt-5" id="filter-section-0">
+                                      <div class="scroll-py-2">
+                                          <div *ngFor="let option of item.options">
+                                              <div class="flex items-center">
+                                                  <mat-checkbox id="'filter - '+ option.value" [name]="item.id"
+                                                      [value]="option.value"
+                                                      (click)="handleMultipleSelectFilter(option.value,item.id)">
+                                                      <span>
+                                                          {{option.lable}}
+                                                      </span>
+                                                  </mat-checkbox>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <div class="" *ngFor="let item of singleFilterData">
+                              <div class="border-b border-gray-200 py-3">
+                                  <span class="font-medium">{{item.name}}</span>
+                                  <div class="pt-5" id="filter-section-0">
+                                      <div class="scroll-py-2">
+                                          <div *ngFor="let option of item.options">
+                                              <div class="flex items-center">
+                                                  <mat-radio-button id="'filter - '+ option.value" [name]="item.id"
+                                                      [value]="option.value"
+                                                      (click)="handleSingleSelectFilter(option.value,option.id)">
+                                                      <span>
+                                                          {{option.lable}}
+                                                      </span>
+                                                  </mat-radio-button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+  
+                      </form>
+                  </div> -->
+        <div class="bg-[#f5f5f5] rounded-[6px] p-6 mb-2 lg:col-span-4">
+          <div class="flex flex-wrap justify-evenly">
+            <ng-container *ngFor="let item of menPants">
+              <app-product-card [product]="item" />
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<app-footer />

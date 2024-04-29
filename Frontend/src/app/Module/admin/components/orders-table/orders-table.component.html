@@ -1,0 +1,68 @@
+<div class="flex bg[#f5f5f5] rounded-[6px] mr-1 h-full">
+  <div class="w-full rounded-[6px] flex flex-col">
+    <div class="w-full bg-gray-200 p-1 rounded-[6px] flex pt-4">
+      <p class="font-[500] text-[24px]">Recent Orders</p>
+    </div>
+    <div class="w-full bg-[#f5f5f5] mt-2 p-1 rounded-[6px] overflow-scroll">
+      <table
+        class="w-full rounded-[6px] overflow-scroll border-[#000000] border-[1px]"
+      >
+        <tr
+          class="text-center text-[18px] bg-gray-200 leading-8 border-[#000000] border-[1px]"
+        >
+          <th class="border-[#000000] border-[1px] px-3">No</th>
+          <th class="border-[#000000] border-[1px] px-3">Image</th>
+          <th class="border-[#000000] border-[1px] px-3">Title</th>
+          <th class="border-[#000000] border-[1px] px-3">Price</th>
+          <th class="border-[#000000] border-[1px] px-3">Orderstatus</th>
+          <th class="border-[#000000] border-[1px] px-3">Address</th>
+          <th class="border-[#000000] border-[1px] px-3">City</th>
+          <th class="border-[#000000] border-[1px] px-3">State</th>
+          <th class="border-[#000000] border-[1px] px-3">Pincode</th>
+          <th class="border-[#000000] border-[1px] px-3">Mobile No</th>
+          <th class="border-[#000000] border-[1px] px-3">payment status</th>
+          <th class="border-[#000000] border-[1px] px-3">order status</th>
+        </tr>
+
+        <tr
+          class="text-center botder-black-100"
+          *ngFor="let item of orderArray; let index = index"
+        >
+          <td class="border-[#000000] border-[1px] px-3">{{ index + 1 }}</td>
+          <td class="flex items-center justify-center my-2">
+            <img
+              [src]="item.image"
+              class="rounded-full h-[40px] w-[40px] object-cover"
+            />
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">{{ item.title }}</td>
+          <td class="border-[#000000] border-[1px] px-3">₹{{ item.price }}</td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.orderStatus }}
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.orderAddress }}
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.orderCity }}
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.orderState }}
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.orderPincode }}
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.orderMobile }}
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.paymentStatus }}
+          </td>
+          <td class="border-[#000000] border-[1px] px-3">
+            {{ item.orderStatus }}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

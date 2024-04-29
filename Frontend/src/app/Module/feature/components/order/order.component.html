@@ -1,0 +1,58 @@
+<app-navbar />
+<div class="py-20 px-5 lg:px-10">
+  <h1 class="font-bold text-lg">My Orders</h1>
+  <div class="flex items-center justify-center">
+    <div class="col-span-3 space-y-5">
+      <div class="space-y-5" *ngFor="let orderItem of productArray; let price of prices">
+        <div class="p-5 bg-[#f5f5f5] shadow-lg">
+          <div class="grid grid-cols-6">
+            <div class="col-span-3">
+              <div class="flex w-full items-center">
+                <img
+                  class="object-cover w-[8rem] h-[9rem] object-top"
+                  [src]="orderItem.image"
+                />
+                <div class="ml-5">
+                  <p class="font-semibold text-lg">{{ orderItem.title }}</p>
+                  <p class="text-sm text-gray-400">
+                    Size: {{ orderItem.size }}
+                  </p>
+                  <p class="text-sm">
+                    <span class="text-md font-bold">Order Status :</span>
+                    {{ orderItem.orderStatus }}
+                  </p>
+                  <p class="text-sm">
+                    <span class="text-md font-bold">Payment Status :</span>
+                    {{ orderItem.paymentStatus }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-2 flex flex-col">
+              <p
+                class="text-lg font-semibold text-green-500 pt-[20px] pl-[17px] pr-[0px] flex justify-end"
+              >
+                ₹{{ orderItem.price }}
+              </p>
+              @if(!orderItem.paymentStatus){
+              <button
+                class="px-3 border-[#000000] border-[1px] w-[80px] py-2 bg-black text-[#ffffff] m-3 rounded-[8px] hover:bg-[#fff] hover:text-[#000] ml-[24vw]"
+                (click)="createPayment(price)"
+              >
+                Payment
+              </button>
+              <p><span class="text-md font-semibold w-full ml-[2.5vw]">Note : </span> After Successfull payment your order is confirm.</p>
+              }
+              @if(orderItem.paymentStatus){
+                <div class="flex items-center py-4 pt-4">
+                  <p><span class="text-md font-semibold w-full ml-[2.5vw]">Note : </span> Your Order is confirmed you will get soon.</p>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer />

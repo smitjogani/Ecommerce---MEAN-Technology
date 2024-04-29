@@ -1,0 +1,23 @@
+<div
+  class="product-card w-[17rem] mb-3 transition-all cursor-pointer flex-col bg-white"
+  (click)="navigate(product); idColl(product)"
+>
+  <div class="product-img h-[17vw]">
+    <img class="h-full w-full object-cover" [src]="product.image" alt="" />
+  </div>
+  <div class="textPart p-3">
+    <div class="">
+      <p class="opacity-80">{{ product.brand }}</p>
+      <p>{{ product.title }}</p>
+      <p class="text-gray-600">{{ product.color }}</p>
+    </div>
+    <div class="flex space-x-2 items-center flex-wrap">
+      <p class="font-bold">₹{{ product.discountedPrice }}</p>
+      <p class="text-gray-600 line-through">₹{{ product.price }}</p>
+      <p>
+        {{ product.discountPersent }}
+        <!-- <span class="text-green-400">{{product.discountedPrice}}%</span> -->
+      </p>
+    </div>
+  </div>
+</div>

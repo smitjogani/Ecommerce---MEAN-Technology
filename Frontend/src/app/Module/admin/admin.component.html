@@ -1,0 +1,66 @@
+<!-- <p class="h-screen bg-red-300">admin works!</p> -->
+<div class="w-full bg-black flex items-center mb-2 justify-between">
+  <div class="p-5" (click)="handleNavigate('/admin/orders')">
+    <a class="text-[2vw] font-semibold uppercase cursor-pointer" routerLink="/">
+      <span class="text-[#de7c31] hover:text-[#36d5e3]">c</span>
+      <span class="text-[#fbff1c] hover:text-[#2be03a]">l</span>
+      <span class="text-[#36d5e3] hover:text-[#f026b7]">o</span>
+      <span class="text-[#36d5e3] hover:text-[#f026b7]">t</span>
+      <span class="text-[#ffffff] hover:text-[#fbff1c]">h</span>
+      <span class="text-[#de7c31] hover:text-[#2be03a]"> g</span>
+      <span class="text-[#fbff1c] hover:text-[#f026b7]">a</span>
+      <span class="text-[#36d5e3] hover:text-[#2be03a]">r</span>
+      <span class="text-[#f026b7] hover:text-[#ffffff]">r</span>
+      <span class="text-[#ffffff] hover:text-[#36d5e3]">a</span>
+      <span class="text-[#2be03a] hover:text-[#ffffff]">g</span>
+      <span class="text-[#36d5e3] hover:text-[#fbff1c]">e</span>
+    </a>
+  </div>
+</div>
+
+<div class="flex items-center h-screen">
+  <div
+    class="h-full w-[16%] rounded-[6px] flex bg-black text-white flex-col items-center py-4 mx-1 mb-2"
+  >
+    <!-- <p
+      class="flex py-2 font-[400] text-[1.4vw] cursor-pointer hover:text-[#36d5e3]"
+      (click)="handleNavigate('/admin/')"
+    >
+      Dashboard
+    </p> -->
+    <p
+      class="flex py-2 font-[400] text-[1.4vw] cursor-pointer hover:text-[#f026b7]"
+      (click)="handleNavigate('/admin/orders')"
+    >
+      Orders
+    </p>
+    <p
+      class="flex py-2 font-[400] text-[1.4vw] cursor-pointer hover:text-[#de7c31]"
+      (click)="handleNavigate('/admin/products')"
+    >
+      Products
+    </p>
+    <p
+      class="flex py-2 font-[400] text-[1.4vw] cursor-pointer hover:text-[#fbff1c]"
+      (click)="handleNavigate('/admin/customers')"
+    >
+      Customers
+    </p>
+    <p
+      class="flex py-2 font-[400] text-[1.4vw] cursor-pointer hover:text-[#2be03a]"
+      (click)="handleNavigate('/admin/create-product')"
+    >
+      Add Products
+    </p>
+    <p
+      class="flex py-2 font-[400] text-[1.4vw] cursor-pointer hover:text-[#ff6363]"
+      (click)="handleLogout()"
+    >
+      Logout
+    </p>
+  </div>
+
+  <div class="w-[85%] h-[99%] bg-[#f5f5f5] mb-4 mt-1">
+    <router-outlet />
+  </div>
+</div>

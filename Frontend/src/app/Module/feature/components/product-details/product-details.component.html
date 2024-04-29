@@ -1,0 +1,41 @@
+<app-navbar />
+<div class="pt-16 p-5 mt-10">
+    <section class="lg:grid grid-cols-3 lg:gap-10">
+        <div class="col-span-2 flex items-center flex-col">
+            <img class="w-[40vw] h-[40vw] object-cover" [src]="productData.image"
+                alt="">
+        </div>
+        <div class="col-span-1 space-y-5 mt-2 lg:mt-0">
+            <div class="space-y-2">
+                <p class="font-semibold text-gray-600 text-lg">{{productData.brand}}</p>
+                <p class="text-xl">{{productData.title}}</p>
+            </div>
+            <div class="flex items-center space-x-5">
+                <p class="text-lg text-green-400">₹{{productData.discountedPrice}}</p>
+                <p class="text-lg text-gray-600 line-through">₹{{productData.price}}</p>
+                <!-- <p class="text-green-400 font-semibold text-lg">49%</p> -->
+            </div>
+            <div class="flex gap-5">
+                <p class="text-lg font-semibold">Size : </p><span class="pt-[5px] text-[18px]">{{productData.sizes}}</span>
+                <!-- <mat-radio-group class="space-x-5" aria-label="Select an option" [(ngModel)]="selectedSize">
+                    <mat-radio-button value={{productData.sizes}}><span>{{productData.sizes}}</span></mat-radio-button>
+                </mat-radio-group> -->
+            </div>
+            <div>
+                <button (click)="handleAddToCart()" class="cartBtn">Place Order</button>
+            </div>
+            <div class="flex flex-wrap">
+                <p class="text-gray-600">{{productData.description}}</p>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="mt-5">
+        <h1 class="py-5 text-gray-400">Related Products</h1>
+        <div class="flex flex-wrap justify-around">
+            <div *ngFor="let item of relatedProducts">  
+                <app-product-card [product]="item"/>
+            </div>
+        </div>
+    </section> -->
+</div>
+<app-footer/>

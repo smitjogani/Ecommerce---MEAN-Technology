@@ -1,0 +1,63 @@
+<div>
+  <form
+    [formGroup]="signupForm"
+    (ngSubmit)="submitForm()"
+    class="flex flex-col bg-[#f5f5f5] rounded-[5px]"
+  >
+    <div class="flex items-center justify-center mt-3">
+      <p class="font-semibold text-3xl flex gap-0 cursor-pointer">
+        <span class="text-[#de7c31] hover:text-[#36d5e3]">S</span>
+        <span class="text-[#f026b7] hover:text-[#fbff1c]">i</span>
+        <span class="text-[#36d5e3] hover:text-[#de7c31]">g</span>
+        <span class="text-[#2be03a] hover:text-[#f026b7]">n</span>
+        <span class="text-[#de7c31] hover:text-[#2be03a]">u</span>
+        <span class="text-[#f026b7] hover:text-[#fbff1c]">p</span>
+      </p>
+    </div>
+
+    <div class="p-5">
+      <mat-form-field class="w-full">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required firstName />
+        <mat-error *ngIf="signupForm.controls['firstName'].hasError('required')"
+          >First Name is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required lastName />
+        <mat-error *ngIf="signupForm.controls['lastName'].hasError('required')"
+          >Last Name is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required email />
+        <mat-error *ngIf="signupForm.controls['email'].hasError('required')"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="signupForm.controls['email'].hasError('email')"
+          >Enter valid email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" required password />
+        <mat-error *ngIf="signupForm.controls['password'].hasError('password')"
+          >Password is required</mat-error
+        >
+        <mat-error *ngIf="signupForm.controls['password'].hasError('minlength')"
+          >Password should be 8 character long</mat-error
+        >
+      </mat-form-field>
+
+      <div>
+        <button class="btn">Signup</button>
+      </div>
+      <!-- <p class="pt-5 translate-x-[25%]">already registered? <span (click)="navigateLogin('login')" class="cursor-pointer text-blue-700" (click)="navigateLogin('login')">Login</span></p> -->
+    </div>
+  </form>
+</div>

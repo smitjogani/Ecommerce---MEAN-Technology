@@ -1,0 +1,42 @@
+<app-navbar/>
+<div class="pt-16">
+    <main class="max-w-7xl">
+        <div class="flex justify-between pt-3 pb-0 min-w-full bg-[#f5f5f5] px-6">
+            <h1 class="text-4xl h font-extrabold">Products</h1>
+            <!-- <div class="flex items-center">
+                <div>
+                    <button mat-button (click)="toggleSortingMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-sort-up" viewBox="0 0 16 16">
+                            <path
+                                d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.5.5 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z" />
+                        </svg>
+                    </button>
+                    <div
+                        class="submenu-wrap absolute top-[20%] mt-1 right-[1%] w-[200px] bg-black text-[#f5f5f5] rounded-[6px]">
+                        @if(isSortMenuOpen){
+                        <div class="submenu pb-2 pt-2 m-[10px]">
+                            <div class="info flex items-center flex-col justify-between bottom-[100%]">
+                                <button class="pb-2  hover:text-[#fbff1c]">Price: High - Low</button>
+                                <button class="pb-2  hover:text-[#de7c31]">Price: Low - High</button>
+                            </div>
+                        </div>
+                        } 
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <section class="pt-3">
+            <div class="grid grid-cols-1 gap-2 gap-y-10 lg:grid-cols-4 px-2">
+                <div class="bg-[#f5f5f5] rounded-[6px] p-6 mb-2 lg:col-span-4">
+                    <div class="flex flex-wrap justify-evenly">
+                        <ng-container *ngFor="let item of productData">
+                            <app-product-card [product]="item" />
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>    
+<app-footer/>

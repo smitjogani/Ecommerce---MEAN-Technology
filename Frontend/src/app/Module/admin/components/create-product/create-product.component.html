@@ -1,0 +1,175 @@
+<div
+  class="flex flex-col bg-[#f5f5f5] rounded-[6px] mr-1 h-full overflow-scrolling"
+>
+  <div class="w-full bg-gray-200 p-1 rounded-[6px] flex pt-4">
+    <p class="font-[500] text-[24px]">Add Products</p>
+  </div>
+  <div class="w-full bg-[#f5f5f5] mt-2 p-1 rounded-[6px]">
+    <div class="rounded-[6px] p-3 bg-gray-200">
+      <form [formGroup]="addproductFrom" (ngSubmit)="handleSubmit()">
+        <div class="grid gird-col-1 gap-3 sm:grid-cols-2">
+          <div>
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Image URL</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="image"
+                  placeholder="Enter Image URL"
+                  autocomplete="given-name"
+                />
+                <mat-error
+                  *ngIf="addproductFrom.controls['image'].hasError('required')"
+                  >Image address link is required</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <div class="col-span-1">
+              <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Enter Brand</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="brand"
+                  placeholder="Enter Brand Name"
+                  autocomplete="given-name"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Size</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="sizes"
+                placeholder="Enter Size"
+                autocomplete="given-name"
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Title</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="title"
+                placeholder="Enter Title"
+                autocomplete="given-name"
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Color</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="color"
+                placeholder="Enter Color"
+                autocomplete="given-name"
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Discounted Price</mat-label>
+              <input
+                matInput
+                type="number"
+                min="0"
+                max="50000"
+                formControlName="discountedPrice"
+                placeholder="Enter Discounted Price"
+              />
+              <mat-error
+              *ngIf="addproductFrom.controls['discountedPrice'].hasError('required')"
+              >Enter Price between 1 to 50,000</mat-error
+            >
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Price</mat-label>
+              <input
+                matInput
+                type="number"
+                min="0"
+                max="50000"
+                formControlName="price"
+                placeholder="Enter Price"
+              />
+              <mat-error
+              *ngIf="addproductFrom.controls['price'].hasError('required')"
+              >Enter Price between 1 to 50,000</mat-error
+            >
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Top Level Category</mat-label>
+              <mat-select formControlName="topLevelCategory">
+                <mat-option value="men">Men</mat-option>
+                <mat-option value="women">Women</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Second Level Category</mat-label>
+              <mat-select formControlName="secondLevelCategory">
+                <mat-option value="clothing">Clothing</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-1">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Third Level Category</mat-label>
+              <mat-select formControlName="thirdLevelCategory">
+                <mat-option value="tshirt">T-shirt</mat-option>
+                <mat-option value="shirts">Shirt</mat-option>
+                <mat-option value="pants">Pant</mat-option>
+                <mat-option value="traditional">Traditional</mat-option>
+                <mat-option value="western">Western</mat-option>
+                <mat-option value="ethnic">Ethnic</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-span-2">
+            <mat-form-field appearance="fill" class="w-full">
+              <mat-label>Details</mat-label>
+              <textarea
+                matInput
+                type="text"
+                formControlName="description"
+                placeholder="Enter Details"
+                autocomplete="given-name"
+                rows="3"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          
+          <div class="col-span-2">
+            <button class="btn w-full text-white bg-black py-3 rounded-[6px]">
+              Add Product
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
