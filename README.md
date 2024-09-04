@@ -1,4 +1,31 @@
-Preview :
+# E-Cloth Store #
+
+# Technology & Tools #
+```
+👉 Angular
+👉 Node Js
+👉 Express JS
+👉 ngrx
+👉 MongoDB
+👉 Razorpay
+```
+
+# Features #
+```
+👉 Authentication
+👉 Puchase multiple item at a time
+👉 Show all orders
+👉 make payments
+👉 add multiple address
+👉 order status
+👉 profile page
+👉 owner show all orders
+👉 owner update order status
+👉 owner delete products
+👉 owner add products
+```
+
+# Demo #
 ![image](https://github.com/smitjogani/Ecommerce---MEAN-Technology/assets/100015904/6a1d8393-c612-4bde-ad85-3aa652edfc15)
 ![image](https://github.com/smitjogani/Ecommerce---MEAN-Technology/assets/100015904/d282577c-39e2-4fbf-a559-da8bacb30b0e)
 ![image](https://github.com/smitjogani/Ecommerce---MEAN-Technology/assets/100015904/435b46dd-2016-4688-a773-e86c1371946e)
